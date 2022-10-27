@@ -103,6 +103,12 @@ $(EPS_DIR)/%.png: $(SCHEMATIC_DIR)/%.py
 		]] ; then \
 			echo "done" ; \
 		else \
+			echo "debug 1" ; \
+			grep 'LaTeX Error:' $$latex_logfile ; \
+			echo "debug 2" ; \
+			grep 'Runaway argument\?' $$latex_logfile ; \
+			echo "debug 3" ; \
+			grep \! $$latex_logfile | head -c 1 | grep \! ; \
 			echo "tail $$latex_logfile:" ; \
 			tail $$latex_logfile ; \
 			exit -1 ; \
