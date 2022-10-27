@@ -23,7 +23,7 @@ jobs:
     - name: dependency by apt
       run: |
         sudo apt-get -qqy update
-        sudo apt-get -qy install texlive-pstricks texlive-science
+        sudo apt-get -qy install texlive-latex-extra texlive-pstricks texlive-science
 
     - name: make
       run: |
